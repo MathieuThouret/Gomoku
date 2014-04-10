@@ -68,11 +68,12 @@ public class JeuDeGomuku {
 
     private boolean verifligne(int id) {
         boolean fin = false;
-        ArrayList listcoup = plateau.etatId(id);
+        ArrayList<Position> listcoup = plateau.etatId(id);
         Position posCour;
         int i;
         for (i = 0; i < listcoup.size(); i++) {
            posCour=listcoup.get(i);
+           
         }
 
         return fin;

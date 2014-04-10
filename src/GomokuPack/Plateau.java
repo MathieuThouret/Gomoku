@@ -55,9 +55,13 @@ public class Plateau {
     //vérifie si le coup n'est pas sur une case déjà prise et si il est bien sur le plateau
     public boolean verifierCoup(Coup coup) {
         boolean ok = true;
-        if ((coup.pos.x > longueur) || (coup.pos.y > largeur)) {
+        if ((coup.pos.x >= longueur) || (coup.pos.y >= largeur)) {
             ok = false;
-        } else if (etatPlateau[coup.pos.x][coup.pos.y] != 0) {
+        }
+            else if ((coup.pos.x <= 0) || (coup.pos.y <= 0)) {
+            ok = false;
+                    }
+         else if (etatPlateau[coup.pos.x][coup.pos.y] != 0) {
             ok = false;
         }
         return ok;
@@ -120,8 +124,8 @@ public class Plateau {
         String strPlat;
         strPlat = "";
         int i, j;
-        for (i = 0; i < longueur; i++) {
-            for (j = 0; j < largeur; j++) {
+        for (i = 1; i <= longueur; i++) {
+            for (j = 1; j <= largeur; j++) {
                 strPlat = strPlat + etatPlateau[i][j] + " ";
             }
             strPlat = strPlat + "\n";
