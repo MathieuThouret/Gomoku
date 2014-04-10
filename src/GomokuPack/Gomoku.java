@@ -62,8 +62,10 @@ public class Gomoku {
         plat.initialiser();
         Joueur j1 = new JoueurAleatoire(1);
         Joueur j2 = new JoueurAleatoire(2);
-        j1.genererCoup(plat);
-        j2.genererCoup(plat);
+        Coup c1 = j1.genererCoup(plat);
+        Coup c2 = j2.genererCoup(plat);
+        plat.jouer(c1);
+        plat.jouer(c2);
         System.out.println(plat.toString());
     }
 
