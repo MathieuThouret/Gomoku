@@ -82,7 +82,7 @@ public class Plateau {
         return der;
     }
 
-    //retourn une liste de tous les coups du joueur id
+    //retourn une liste de tous les coups du joueur id "prout"
     public ArrayList etatId(int id) {
         ArrayList posid = new ArrayList();
 
