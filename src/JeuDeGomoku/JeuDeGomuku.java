@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package JeuDeGomoku;
+
 import java.util.ArrayList;
 import GomokuPack.*;
 import JoueurGomoku.*;
@@ -21,9 +22,9 @@ public class JeuDeGomuku {
 
         //joueur 0 commence par défaut
         joueurCourant = joueurs[0];
-        
+
         //initialisation du plateau
-        Plateau plateau = new Plateau(19,19);
+        Plateau plateau = new Plateau(19, 19);
 
     }
 
@@ -48,15 +49,13 @@ public class JeuDeGomuku {
     }
 
     //Retourne vrai si la partie est terminée, 0 sinon
-    public boolean partieTerminee()
-    {
-        boolean fin=false;
+    public boolean partieTerminee() {
+        boolean fin = false;
         //On vérifier que les joueurs n'ont pas joué leur 60 pièces
-        if((plateau.etatId(joueurs[0].getId()).size()==60)&&(plateau.etatId(joueurs[1].getId()).size()==60))
-        {
-            fin=true;
+        if ((plateau.etatId(joueurs[0].getId()).size() == 60) && (plateau.etatId(joueurs[1].getId()).size() == 60)) {
+            fin = true;
         }
-        
+
         //On vérifie si les joueurs ont gagné, on parcourt leur liste de point, et pour chacun on vérifie si le premier point peut vérifier un des motifs suivant
         // X point controler :
         //Xxxxx Xoooo Xoooo ooooX
@@ -64,40 +63,36 @@ public class JeuDeGomuku {
         //ooooo xoooo ooxoo ooxoo
         //ooooo xoooo oooxo oxooo
         //ooooo xoooo oooox xoooo
-        
-        
-        return fin;
-    }
-    
-    private boolean verifligne(int id)
-    {
-        boolean fin=false;
-        ArrayList listcoup=plateau.etatId(id);
-        
         return fin;
     }
 
-        private boolean verifcolonne(int id)
-    {
-        boolean fin=false;
-        
-        
-        return fin;
-    }
-        
-    private boolean verifdiag1(int id)
-    {
-        boolean fin=false;
-        
-        
+    private boolean verifligne(int id) {
+        boolean fin = false;
+        ArrayList listcoup = plateau.etatId(id);
+        Position posCour;
+        int i;
+        for (i = 0; i < listcoup.size(); i++) {
+           posCour=listcoup.get(i);
+        }
+
         return fin;
     }
 
-        private boolean veriflignediag2 (int id)
-    {
-        boolean fin=false;
-        
-        
+    private boolean verifcolonne(int id) {
+        boolean fin = false;
+
+        return fin;
+    }
+
+    private boolean verifdiag1(int id) {
+        boolean fin = false;
+
+        return fin;
+    }
+
+    private boolean veriflignediag2(int id) {
+        boolean fin = false;
+
         return fin;
     }
 }
