@@ -22,4 +22,8 @@ public class Coup {
     public String toString() {
         return pos.toString() + " ; " + "id=" + id;
     }
+    
+    public void setCoupPosition(Position posc){
+        pos=posc;
+    }
 }

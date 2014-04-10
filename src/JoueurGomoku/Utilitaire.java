@@ -14,7 +14,7 @@ import java.math.*;
 public class Utilitaire {
     public static int monRandom (int min, int max){
        java.util.Random r = new java.util.Random();
-        return r.nextInt(max-min)+ min;
+        return r.nextInt(max+1-min)+ min-1;
     }
     
     /*public static void main(String[] args){

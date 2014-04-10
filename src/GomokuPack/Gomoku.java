@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package GomokuPack;
+
 import java.util.ArrayList;
+import JoueurGomoku.*;
+
 /**
  *
  * @author p1307394
@@ -14,7 +17,7 @@ public class Gomoku {
     /**
      * @param args the command line arguments
      */
-    public static void testfun(){
+    public static void testfun() {
         Position pos;
         pos = new Position(1, 2);
         System.out.println(pos);
@@ -36,27 +39,38 @@ public class Gomoku {
 
         System.out.println(plat.longueur);
         System.out.println(plat.largeur);
-        
+
         System.out.println(plat.historique);
-        
-        ArrayList listcoup= new ArrayList<Coup>();
+
+        ArrayList listcoup = new ArrayList<Coup>();
         Position pos1 = new Position(3, 2);
         Position pos2 = new Position(4, 4);
         Coup coup1 = new Coup(1, pos1);
         Coup coup2 = new Coup(2, pos2);
         listcoup.add(coup1);
         listcoup.add(coup2);
-        Plateau plat2=new Plateau(5,5);
+        Plateau plat2 = new Plateau(5, 5);
         plat2.initialiser(listcoup);
         System.out.println(plat2);
         plat2.annuler();
         System.out.println(plat2);
-        
+
     }
-    
+
+    public static void testJoueurAleatoire() {
+        Plateau plat = new Plateau(5, 5);
+        plat.initialiser();
+        Joueur j1 = new JoueurAleatoire(1);
+        Joueur j2 = new JoueurAleatoire(2);
+        j1.genererCoup(plat);
+        j2.genererCoup(plat);
+        System.out.println(plat.toString());
+    }
+
     public static void main(String[] args) {
-        testfun();
-        SimulateurDeJeu.Simuler();
+        /*testfun();
+         SimulateurDeJeu.Simuler();*/
+        testJoueurAleatoire();
     }
 
 }

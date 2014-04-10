@@ -10,21 +10,17 @@ import GomokuPack.*;
  *
  * @author mathieu
  */
-public class Joueur {
-    int _id;
+public abstract class Joueur {
+    int id;
     
-    public Joueur(int _id){
-        this._id=_id;
+    public Joueur(int id){
+        this.id=id;
     }
     
     public int getId(){
-        return this._id;
+        return this.id;
     }
-    //Génère un coup aléatoirement sur le plateau 'etatJeu' seulement si la case est libre.
-    public Coup genererCoup(Plateau etatJeu){
-        int x = Utilitaire.monRandom(1,etatJeu.getLargeur());
-        int y = Utilitaire.monRandom(1,etatJeu.getLongueur());
-        return new Coup(this._id, new Position(x,y));
-    }
+   
+    abstract public Coup genererCoup(Plateau etatJeu);
     
 }

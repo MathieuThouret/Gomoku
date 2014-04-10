@@ -74,7 +74,7 @@ public class Plateau {
         }
     }
     
-    //annule le dernier coup joué salut
+    //annule le dernier coup joué
     public Coup annuler() {
         Coup der;
         der = historique.get(historique.size() - 1);
