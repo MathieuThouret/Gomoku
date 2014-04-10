@@ -74,7 +74,7 @@ public class Plateau {
         }
     }
     
-    //annule le dernier coup joué
+    //annule le dernier coup joué salut
     public Coup annuler() {
         Coup der;
         der = historique.get(historique.size() - 1);
@@ -82,7 +82,7 @@ public class Plateau {
         return der;
     }
 
-    //retourn une liste de tous les coups du joueur id "prout"
+    //retourn une liste de tous les coups du joueur id
     public ArrayList etatId(int id) {
         ArrayList posid = new ArrayList();
 
