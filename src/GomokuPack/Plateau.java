@@ -97,7 +97,6 @@ public class Plateau {
             }
         }
         return posid;
-
     }
 
     public int getLongueur() {
