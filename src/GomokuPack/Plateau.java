@@ -104,11 +104,11 @@ public class Plateau {
     }
 
     //renvoi 0 si la case (x,y) est hors du plateau, renvoi l'id de la case sinon
-    public int getNoDebord(Position pos) {
-        if ((pos.x > longueur) || (pos.y > largeur)) {
+    public int getNoDebord(int x, int y) {
+        if ((x > longueur) || (y > largeur)) {
             return 0;
         } else {
-            return etatPlateau[pos.x][pos.y];
+            return etatPlateau[x][y];
         }
     }
 
