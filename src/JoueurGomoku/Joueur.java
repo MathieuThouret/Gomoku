@@ -20,6 +20,10 @@ public abstract class Joueur {
     public int getId(){
         return this.id;
     }
+    
+    public void setId(int _id){
+        this.id=_id;
+    }
    
     abstract public Coup genererCoup(Plateau etatJeu);
     
