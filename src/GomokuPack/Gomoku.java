@@ -68,11 +68,24 @@ public class Gomoku {
         plat.jouer(c2);
         System.out.println(plat.toString());
     }
+    
+    public static void testJoueurAleaVsHumain(){
+        Plateau plat = new Plateau(5,5);
+        plat.initialiser();
+        Joueur jA = new JoueurAleatoire(1);
+        Joueur jH = new JoueurHumain(2);
+        Coup cA = jA.genererCoup(plat);
+        Coup cH = jH.genererCoup(plat);
+        plat.jouer(cA);
+        plat.jouer(cH);
+        System.out.println(plat.toString());
+    }
 
     public static void main(String[] args) {
         /*testfun();
-         SimulateurDeJeu.Simuler();*/
-        testJoueurAleatoire();
+         SimulateurDeJeu.Simuler();
+        testJoueurAleatoire();*/
+        testJoueurAleaVsHumain();
     }
 
 }

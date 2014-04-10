@@ -126,7 +126,7 @@ public class Plateau {
         int i, j;
         for (i = 1; i <= longueur; i++) {
             for (j = 1; j <= largeur; j++) {
-                strPlat = strPlat + etatPlateau[i][j] + " ";
+                strPlat = strPlat + etatPlateau[j][i] + " ";
             }
             strPlat = strPlat + "\n";
         }
