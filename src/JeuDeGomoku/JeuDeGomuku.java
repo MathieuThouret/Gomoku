@@ -73,7 +73,7 @@ public class JeuDeGomuku {
         int i;
         for (i = 0; i < listcoup.size(); i++) {
            posCour=listcoup.get(i);
-           if(getNoDebord(posCour.x))
+           if((getNoDebord(posCour.x+1,posCour.y)!=id)||(getNoDebord(posCour.x+2,posCour.y)!=id)||(getNoDebord(posCour.x+3,posCour.y)!=id)||(getNoDebord(posCour.x+4,posCour.y)!=id))
            
         }
 

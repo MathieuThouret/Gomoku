@@ -55,7 +55,7 @@ public class Plateau {
     //vérifie si le coup n'est pas sur une case déjà prise et si il est bien sur le plateau
     public boolean verifierCoup(Coup coup) {
         boolean ok = true;
-        if ((coup.pos.x >= longueur) || (coup.pos.y >= largeur)) {
+        if ((coup.pos.x > longueur) || (coup.pos.y > largeur)) {
             ok = false;
         }
             else if ((coup.pos.x <= 0) || (coup.pos.y <= 0)) {
