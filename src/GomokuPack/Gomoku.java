@@ -64,13 +64,15 @@ public class Gomoku {
         Joueur j2 = new JoueurAleatoire(2);
         Coup c1 = j1.genererCoup(plat);
         Coup c2 = j2.genererCoup(plat);
+        System.out.println(c1);
+        System.out.println(c2);
         plat.jouer(c1);
         plat.jouer(c2);
         System.out.println(plat.toString());
     }
-    
-    public static void testJoueurAleaVsHumain(){
-        Plateau plat = new Plateau(5,5);
+
+    public static void testJoueurAleaVsHumain() {
+        Plateau plat = new Plateau(5, 5);
         plat.initialiser();
         Joueur jA = new JoueurAleatoire(1);
         Joueur jH = new JoueurHumain(2);
@@ -83,9 +85,11 @@ public class Gomoku {
 
     public static void main(String[] args) {
         /*testfun();
-         SimulateurDeJeu.Simuler();
-        testJoueurAleatoire();*/
-        testJoueurAleaVsHumain();
+         SimulateurDeJeu.Simuler();*/
+        for (int i = 0; i < 10; i++) {
+            testJoueurAleatoire();
+        }
+        /*testJoueurAleaVsHumain();*/
     }
 
 }

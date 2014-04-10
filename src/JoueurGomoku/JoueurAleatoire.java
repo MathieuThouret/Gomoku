@@ -20,12 +20,12 @@ public class JoueurAleatoire extends Joueur {
     //Génère un coup aléatoirement sur le plateau 'etatJeu' seulement si la case est libre.
     @Override
     public Coup genererCoup(Plateau etatJeu) {
-        int x = Utilitaire.monRandom(1, etatJeu.getLargeur());
-        int y = Utilitaire.monRandom(1, etatJeu.getLongueur());
+        int x = Utilitaire.monRandom(1, etatJeu.getLargeur()+2);
+        int y = Utilitaire.monRandom(1, etatJeu.getLongueur()+2);
         Coup c=new Coup(id, new Position(x, y));
         while (!etatJeu.verifierCoup(c)) {
-            x = Utilitaire.monRandom(1, etatJeu.getLargeur());
-            y = Utilitaire.monRandom(1, etatJeu.getLongueur());
+            x = Utilitaire.monRandom(1, etatJeu.getLargeur()+2);
+            y = Utilitaire.monRandom(1, etatJeu.getLongueur()+2);
             c.setCoupPosition(new Position(x,y));
         }
         return c;
