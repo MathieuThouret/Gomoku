@@ -26,6 +26,7 @@ public class Plateau {
         initialiser();
     }
 
+    //toutes les cases à 0
     public void initialiser() {
         int i, j;
         for (i = 1; i <= longueur; i++) {
@@ -35,6 +36,7 @@ public class Plateau {
         }
     }
 
+    //initialiser avec une liste de coups prédéfinis
     public void initialiser(ArrayList<Coup> coups) {
         int i, j, x = 0;
         Coup coup;
@@ -50,6 +52,7 @@ public class Plateau {
         }
     }
 
+    //vérifie si le coup n'est pas sur une case déjà prise et si il est bien sur le plateau
     public boolean verifierCoup(Coup coup) {
         boolean ok = true;
         if ((coup.pos.x > longueur) || (coup.pos.y > largeur)) {
@@ -61,6 +64,7 @@ public class Plateau {
 
     }
 
+    //pose le coup sur le plateau
     public void jouer(Coup coup) {
         if (verifierCoup(coup)) {
             etatPlateau[coup.pos.x][coup.pos.y] = coup.id;
@@ -69,7 +73,8 @@ public class Plateau {
             System.out.println("coup invalide \n");
         }
     }
-
+    
+    //annule le dernier coup joué
     public Coup annuler() {
         Coup der;
         der = historique.get(historique.size() - 1);
@@ -77,6 +82,7 @@ public class Plateau {
         return der;
     }
 
+    //retourn une liste de tous les coups du joueur id
     public ArrayList etatId(int id) {
         ArrayList posid = new ArrayList();
 
@@ -91,7 +97,6 @@ public class Plateau {
             }
         }
         return posid;
-
     }
 
     public int getLongueur() {
