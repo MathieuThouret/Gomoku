@@ -26,7 +26,7 @@ public class JoueurAleatoire extends Joueur {
         while (!etatJeu.verifierCoup(c)) {
             x = Utilitaire.monRandom(1, etatJeu.getLargeur()+2);
             y = Utilitaire.monRandom(1, etatJeu.getLongueur()+2);
-            c.setCoupPosition(new Position(x,y));
+            c.setPosition(new Position(x,y));
         }
         return c;
     }

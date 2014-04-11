@@ -25,6 +25,10 @@ public class Plateau {
         historique = new ArrayList<Coup>();
         initialiser();
     }
+    
+    public int getEtatPlateau(int x, int y){
+        return etatPlateau[x][y];
+    }
 
     //toutes les cases à 0
     public void initialiser() {

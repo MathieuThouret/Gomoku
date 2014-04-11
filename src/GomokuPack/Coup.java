@@ -18,12 +18,24 @@ public class Coup {
         id = idc;
         pos = posc;
     }
+    
+    public int getId(){
+        return this.id;
+    }
+    
+    public void setId(int id){
+        this.id=id;
+    }
+    
+    public Position getPosition(){
+        return this.pos;
+    }
+    
+    public void setPosition(Position pos){
+        this.pos=pos;
+    }
 
     public String toString() {
         return pos.toString() + " ; " + "id=" + id;
-    }
-    
-    public void setCoupPosition(Position posc){
-        pos=posc;
     }
 }
