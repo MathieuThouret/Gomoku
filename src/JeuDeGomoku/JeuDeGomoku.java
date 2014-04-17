@@ -27,17 +27,20 @@ public class JeuDeGomoku extends JeuDePlateau {
     }
 
     //permet d'attribuer un id (et donc un ordre de passage ) à un joueur
+    @Override
     public void setJoueur(int ordre,Joueur joueur) {
         joueurs[ordre]=joueur;
     }
 
     //réinitialisation du plateau
+    @Override
     public void setPlateau(Plateau plateau) {
         plateau.initialiser();
     }
 
     
 
+    @Override
     public boolean coupValide(Coup c) {
         boolean b = false;
         // On vérifie si le coup est dans le plateau et si la case est libre
@@ -77,6 +80,7 @@ public class JeuDeGomoku extends JeuDePlateau {
     }
 
     //Retourne vrai si la partie est terminée, 0 sinon
+    @Override
     public boolean partieTerminee() {
 
         //On vérifier que les joueurs n'ont pas joué leurs 60 pièces

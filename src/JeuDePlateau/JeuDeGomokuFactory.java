@@ -23,6 +23,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         JDP.setJoueur(0, new JoueurHumain(1));
         JDP.setJoueur(1, new JoueurHumain(2));
         JDP.setPlateau(new Plateau(9,9));
+        JDP.plateau.initialiser(situation);
         return JDP;
     }
 
@@ -32,6 +33,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         JDP.setJoueur(0, new JoueurHumain(1));
         JDP.setJoueur(1, new JoueurAleatoire(2));
         JDP.setPlateau(new Plateau(9,9));
+        JDP.plateau.initialiser(situation);
         return JDP;
     }
 
@@ -39,5 +41,6 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
     public JeuDePlateau CreerPartieAleatoireVSAleatoire(ArrayList<Coup> situation) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     
 }

@@ -8,6 +8,8 @@ package GomokuPack;
 import java.util.ArrayList;
 import JoueurGomoku.*;
 import JeuDeGomoku.*;
+import JeuDePlateau.JeuDeGomokuFactory;
+import JeuDePlateau.JeuDePlateau;
 
 /**
  *
@@ -82,11 +84,16 @@ public class Gomoku {
     }
 
     public static void testPresentation() {
+        JeuDeGomokuFactory factory = new JeuDeGomokuFactory();
+        JeuDePlateau JDP = new JeuDeGomoku();
+        ArrayList<Coup> situation = new ArrayList<Coup>();
         
+        //--1--
         Plateau plateau = new Plateau(9,9);
         plateau.initialiser();
         System.out.println(plateau);
         
+        //--2--
         Position pos = new Position(8,9);
         Coup coup = new Coup(1,pos);
         plateau.jouer(coup);
@@ -97,7 +104,7 @@ public class Gomoku {
         plateau.jouer(coup);       
         System.out.println(plateau);
 
-        
+        //--3--
         Joueur jHum = new JoueurHumain(1);
         Joueur jIA = new JoueurAleatoire(2);        
         plateau.jouer(jHum.genererCoup(plateau));
@@ -106,6 +113,10 @@ public class Gomoku {
         plateau.jouer(jIA.genererCoup(plateau));
         System.out.println(plateau);
         
+        //--4--
+        situation = plateau.getHistorique();
+        JDP = factory.CreerPartieHumainVSAleatoire(situation);
+        JDP.jouerPartie();
         
         
     }

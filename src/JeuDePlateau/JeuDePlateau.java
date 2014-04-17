@@ -51,11 +51,12 @@ public abstract class JeuDePlateau {
     public Joueur jouerPartie() {
         
         Coup c;
-        
+        joueurCourant = joueurSuivant();
         while(!partieTerminee()) {
             c=joueurCourant.genererCoup(plateau);
             if (coupValide(c)) {
                 plateau.jouer(c);
+                System.out.println(plateau);
                 joueurCourant=joueurSuivant();
             }
             else {
