@@ -72,12 +72,8 @@ public class Plateau {
 
     //pose le coup sur le plateau
     public void jouer(Coup coup) {
-        if (verifierCoup(coup)) {
             etatPlateau[coup.pos.x][coup.pos.y] = coup.id;
             historique.add(coup);
-        } else {
-            System.out.println("coup invalide \n");
-        }
     }
 
     //annule le dernier coup joué
@@ -137,12 +133,22 @@ public class Plateau {
 
     public int getDernierId() {
         Coup c;
-        if (historique.isEmpty()) {
+        if (!historique.isEmpty()) {
             c = historique.get(historique.size() - 1);
             return c.getId();
         } else {
             return 0;
         }
-
     }
+
+    public Coup getDernierCoup() {
+        Coup c;
+        if (!historique.isEmpty()) {
+            c = historique.get(historique.size() - 1);
+            return c;
+        } else {
+            return null;
+        }
+    }
+
 }
