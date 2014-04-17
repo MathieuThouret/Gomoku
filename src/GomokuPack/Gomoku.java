@@ -7,6 +7,7 @@ package GomokuPack;
 
 import java.util.ArrayList;
 import JoueurGomoku.*;
+import JeuDeGomoku.*;
 
 /**
  *
@@ -14,9 +15,6 @@ import JoueurGomoku.*;
  */
 public class Gomoku {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void testfun() {
         Position pos;
         pos = new Position(1, 2);
@@ -83,13 +81,36 @@ public class Gomoku {
         System.out.println(plat.toString());
     }
 
+    public static void testPresentation() {
+        
+        Plateau plateau = new Plateau(9,9);
+        plateau.initialiser();
+        System.out.println(plateau);
+        
+        Position pos = new Position(8,9);
+        Coup coup = new Coup(1,pos);
+        plateau.jouer(coup);
+        System.out.println(plateau);
+       
+        pos = new Position(1,1);
+        coup = new Coup(2,pos);
+        plateau.jouer(coup);       
+        System.out.println(plateau);
+
+        
+        Joueur jHum = new JoueurHumain(1);
+        Joueur jIA = new JoueurAleatoire(2);        
+        plateau.jouer(jHum.genererCoup(plateau));
+        System.out.println(plateau);
+        
+        plateau.jouer(jIA.genererCoup(plateau));
+        System.out.println(plateau);
+        
+        
+        
+    }
     public static void main(String[] args) {
-        /*testfun();
-         SimulateurDeJeu.Simuler();*/
-        for (int i = 0; i < 10; i++) {
-            testJoueurAleatoire();
-        }
-        /*testJoueurAleaVsHumain();*/
+        testPresentation();
     }
 
 }
