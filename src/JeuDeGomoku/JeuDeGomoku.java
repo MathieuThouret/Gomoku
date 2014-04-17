@@ -10,13 +10,13 @@ import GomokuPack.*;
 import JeuDePlateau.JeuDePlateau;
 import JoueurGomoku.*;
 
-public class JeuDeGomuku extends JeuDePlateau {
+public class JeuDeGomoku extends JeuDePlateau {
 
     Joueur joueurCourant;
     Joueur[] joueurs;
     Plateau plateau;
 
-    public JeuDeGomuku() {
+    public JeuDeGomoku() {
         //initialisation des 2 joueurs
 
         //le joueur courant est initialisé a la valeur null pour faciler le test dans joueurSuivant()
@@ -36,26 +36,7 @@ public class JeuDeGomuku extends JeuDePlateau {
         plateau.initialiser();
     }
 
-    //Change le joueur courant
-    public Joueur joueurSuivant() {
-        //cas où il y a un joueur courant
-        if (joueurCourant != null) {
-            if (joueurCourant == joueurs[0]) {
-                return joueurs[1];
-            } else {
-                return joueurs[0];
-            }
-        } //cas où il n'y a pas de joueur courant mais un coup dans l'historique
-        else if (plateau.getDernierId() != 0) {
-            if (joueurs[0].getId() == plateau.getDernierId()) {
-                return joueurs[0];
-            } else {
-                return joueurs[1];
-            }
-        } else {
-            return joueurs[0];
-        }
-    }
+    
 
     public boolean coupValide(Coup c) {
         boolean b = false;

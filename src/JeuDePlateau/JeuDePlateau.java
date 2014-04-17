@@ -14,10 +14,44 @@ import JeuDeGomoku.*;
  *
  * @author mathieu
  */
-public class JeuDePlateau {
+public abstract class JeuDePlateau {
+    
+    Joueur joueurCourant;
+    Joueur[] joueurs;
+    Plateau plateau;
+    
+    public abstract boolean partieTerminee();
+    
+    public abstract boolean coupValide(Coup c);
+    
+    public abstract void setJoueur(int ordre,Joueur joueur);
+    
+    public abstract void setPlateau(Plateau plateau);
+    
+    public Joueur joueurSuivant(){
+        //cas où il y a un joueur courant
+        if (joueurCourant != null) {
+            if (joueurCourant == joueurs[0]) {
+                return joueurs[1];
+            } else {
+                return joueurs[0];
+            }
+        } //cas où il n'y a pas de joueur courant mais un coup dans l'historique
+        else if (plateau.getDernierId() != 0) {
+            if (joueurs[0].getId() == plateau.getDernierId()) {
+                return joueurs[0];
+            } else {
+                return joueurs[1];
+            }
+        } else {
+            return joueurs[0];
+        }
+    }
     
     public Joueur jouerPartie() {
+        
         Coup c;
+        
         while(!partieTerminee()) {
             c=joueurCourant.genererCoup(plateau);
             if (coupValide(c)) {
