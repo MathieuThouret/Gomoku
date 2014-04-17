@@ -32,7 +32,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         JeuDePlateau JDP = new JeuDeGomoku();
         JDP.setJoueur(0, new JoueurHumain(1));
         JDP.setJoueur(1, new JoueurAleatoire(2));
-        JDP.setPlateau(new Plateau(9,9));
+        JDP.plateau = new Plateau(9,9);
         JDP.plateau.initialiser(situation);
         return JDP;
     }

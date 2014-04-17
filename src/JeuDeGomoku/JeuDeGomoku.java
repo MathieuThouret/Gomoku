@@ -18,12 +18,9 @@ public class JeuDeGomoku extends JeuDePlateau {
 
     public JeuDeGomoku() {
         //initialisation des 2 joueurs
-
+        joueurs = new Joueur[2];
         //le joueur courant est initialisé a la valeur null pour faciler le test dans joueurSuivant()
         joueurCourant = null;
-
-        //initialisation du plateau
-        Plateau plateau = new Plateau(19, 19);
     }
 
     //permet d'attribuer un id (et donc un ordre de passage ) à un joueur
