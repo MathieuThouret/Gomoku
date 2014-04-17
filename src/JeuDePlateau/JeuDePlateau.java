@@ -8,16 +8,31 @@ package JeuDePlateau;
 
 import JoueurGomoku.*;
 import GomokuPack.*;
+import JeuDeGomoku.*;
 
 /**
  *
  * @author mathieu
  */
-public abstract class JeuDePlateau {
+public class JeuDePlateau {
     
-    public abstract void setJoueur(int ordre, Joueur joueur);
-    
-    public abstract void setPlateau(Plateau plateau);
-    
+    public Joueur jouerPartie() {
+        Coup c;
+        while(!partieTerminee()) {
+            c=joueurCourant.genererCoup(plateau);
+            if (coupValide(c)) {
+                plateau.jouer(c);
+                joueurCourant=joueurSuivant();
+            }
+            else {
+                System.out.println("coup invalide \n");
+            }
+        }
+        // à la sortie de la boucle on inverse le joueur courant pour pouvoir retourner le joueur gagnant
+        //(car on change de joueur directement après chaque coup, le joueur courant est le joueur qui doit jouer et non celui qui a jouer)
+        joueurCourant=joueurSuivant();
+        return joueurCourant;
+        
+    }
     
 }

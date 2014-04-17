@@ -7,9 +7,10 @@ package JeuDeGomoku;
 
 import java.util.ArrayList;
 import GomokuPack.*;
+import JeuDePlateau.JeuDePlateau;
 import JoueurGomoku.*;
 
-public class JeuDeGomuku {
+public class JeuDeGomuku extends JeuDePlateau {
 
     Joueur joueurCourant;
     Joueur[] joueurs;
@@ -173,22 +174,5 @@ public class JeuDeGomuku {
         return false;
     }
     
-    public Joueur jouerPartie() {
-        Coup c;
-        while(!partieTerminee()) {
-            c=joueurCourant.genererCoup(plateau);
-            if (coupValide(c)) {
-                plateau.jouer(c);
-                joueurCourant=joueurSuivant();
-            }
-            else {
-                System.out.println("coup invalide \n");
-            }
-        }
-        // à la sortie de la boucle on inverse le joueur courant pour pouvoir retourner le joueur gagnant
-        //(car on change de joueur directement après chaque coup, le joueur courant est le joueur qui doit jouer et non celui qui a jouer)
-        joueurCourant=joueurSuivant();
-        return joueurCourant;
-        
-    }
+    
 }

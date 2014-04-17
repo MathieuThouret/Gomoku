@@ -5,13 +5,18 @@
  */
 
 package JeuDePlateau;
-import GomokuPack.*;
-import JoueurGomoku.*;
+import GomokuPack.Coup;
+import java.util.ArrayList;
 
 /**
  *
  * @author mathieu
  */
-public class JeuDePlateauFactory {
+public interface JeuDePlateauFactory {
     
+    public JeuDePlateau CreerPartieHumainVSHumain (ArrayList<Coup> situation);
+    
+    public JeuDePlateau CreerPartieHumainVSAleatoire (ArrayList<Coup> situation);
+    
+    public JeuDePlateau CreerPartieAleatoireVSAleatoire (ArrayList<Coup> situation);
 }
