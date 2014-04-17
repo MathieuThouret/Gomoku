@@ -25,8 +25,8 @@ public class Plateau {
         historique = new ArrayList<Coup>();
         initialiser();
     }
-    
-    public int getEtatPlateau(int x, int y){
+
+    public int getEtatPlateau(int x, int y) {
         return etatPlateau[x][y];
     }
 
@@ -61,11 +61,9 @@ public class Plateau {
         boolean ok = true;
         if ((coup.pos.x > longueur) || (coup.pos.y > largeur)) {
             ok = false;
-        }
-            else if ((coup.pos.x <= 0) || (coup.pos.y <= 0)) {
+        } else if ((coup.pos.x <= 0) || (coup.pos.y <= 0)) {
             ok = false;
-                    }
-         else if (etatPlateau[coup.pos.x][coup.pos.y] != 0) {
+        } else if (etatPlateau[coup.pos.x][coup.pos.y] != 0) {
             ok = false;
         }
         return ok;
@@ -135,5 +133,16 @@ public class Plateau {
             strPlat = strPlat + "\n";
         }
         return strPlat;
+    }
+
+    public int getDernierId() {
+        Coup c;
+        if (historique.isEmpty()) {
+            c = historique.get(historique.size() - 1);
+            return c.getId();
+        } else {
+            return 0;
+        }
+
     }
 }
